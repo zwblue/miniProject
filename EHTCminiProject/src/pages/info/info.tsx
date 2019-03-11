@@ -2,7 +2,7 @@ import { ComponentClass } from 'react'
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 
-import './index.scss'
+import './infos.scss'
 
 
 type PageOwnProps = {}
@@ -32,7 +32,7 @@ class Index extends Component {
   render () {
     return (
       <View className='index'>
-        <Text>Index</Text>
+        <Text>Info</Text>
       </View>
     )
   }

@@ -27,13 +27,65 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      'pages/index/index'
+      "pages/index/index",
+    
+      "pages/newsList/newsList",
+      "pages/search/search",
+  
+      "pages/optional/optional",
+      "pages/optionalEdit/optionalEdit",
+  
+      "pages/info/info",
+      "pages/infoDetail/infoDetail",
+  
+      "pages/market/market",
+      "pages/stock/stock",
+  
+      "pages/user/user",
+      "pages/updateLog/updateLog"
     ],
     window: {
-      backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
+      navigationBarBackgroundColor: "#263442",
+      navigationBarTitleText: "e海通财",
+      backgroundColor: "#111c24",
+      navigationBarTextStyle: "white"
+    },
+    tabBar: {
+      selectedColor: "#426188",
+      color: "#929292",
+      backgroundColor: "#1d2833",
+      list: [
+        {
+          pagePath: "pages/index/index",
+          text: "首页",
+          iconPath: "static/tabs/tab_index.png",
+          selectedIconPath: "images/tabs/tab_index_on.png"
+        },
+        {
+          pagePath: "pages/optional/optional",
+          text: "自选",
+          iconPath: "static/tabs/tab_optional.png",
+          selectedIconPath: "images/tabs/tab_optional_on.png"
+        },
+        {
+          pagePath: "pages/market/market",
+          text: "行情",
+          iconPath: "static/tabs/tab_market.png",
+          selectedIconPath: "images/tabs/tab_market_on.png"
+        },
+        {
+          pagePath: "pages/info/info",
+          text: "资讯",
+          iconPath: "static/tabs/tab_info.png",
+          selectedIconPath: "images/tabs/tab_info_on.png"
+        },
+        {
+          pagePath: "pages/user/user",
+          text: "我的",
+          iconPath: "static/tabs/tab_user.png",
+          selectedIconPath: "images/tabs/tab_user_on.png"
+        }
+      ]
     }
   }
 
