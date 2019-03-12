@@ -7,9 +7,6 @@ page{
   background: $black_bg;
   line-height: 1.4;
   font-family: Lucida Grande,'Microsoft YaHei',"Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
-  view{
-    overflow: visible;
-  }
 }
 
 // h5
@@ -21,6 +18,7 @@ body{
   height: 100%;
   color: $base_color;
 }
+
 
 .divider{
   height: $divider_height;

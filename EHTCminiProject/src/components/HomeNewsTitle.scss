@@ -1,4 +1,10 @@
 @import'../styles/variables.scss';
+.top-bd{
+  border-top: 2px solid $border_color;
+}
+.bot-bd{
+  border-bottom: 2px solid $border_color;
+}
 .news-box{
   height: 76px;
   background: $base_bg;
