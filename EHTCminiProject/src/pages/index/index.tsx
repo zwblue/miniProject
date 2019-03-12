@@ -1,38 +1,60 @@
 import { ComponentClass } from 'react'
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
-
+import SearchEntry from '../../components/SearchEntry'
+import BaseMenu from '../../components/BaseMenu'
+import ShareIndex from '../../components/ShareIndex'
+import request, { getnews24List, marketIndex } from '../../api'
 import './index.scss'
 
 
 type PageOwnProps = {}
 
-type PageState = {}
+type PageState = {
+  shareIndexData: {
+    data: string[],
+    field: string[]
+  }
+}
 
 interface Index {
   props: PageOwnProps;
 }
 
 class Index extends Component {
-  
     config: Config = {
     navigationBarTitleText: '首页'
   }
-
+  state = {
+    shareIndexData: {
+      field: [],
+      data: [],
+    }
+  }
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
   }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
+  componentDidMount () {
+    this.getShareIndexData()
+  }
+  async getShareIndexData () {
+    const {data} = await request(marketIndex)
+    console.log('shareIndex', data)
+    this.setState({ shareIndexData : data })
+  }
+  componentDidShow () { 
+  }
 
   componentDidHide () { }
 
   render () {
+    const {shareIndexData} = this.state
     return (
-      <View className='index'>
-        <Text>Index</Text>
+      <View className='container'>
+        <SearchEntry></SearchEntry>
+        <BaseMenu menuData={[]}></BaseMenu>
+        <View className="divider"></View>
+        <ShareIndex shareIndexData={shareIndexData} ></ShareIndex>
       </View>
     )
   }
