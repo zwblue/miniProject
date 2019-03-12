@@ -2,8 +2,10 @@ import { ComponentClass } from 'react'
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import SearchEntry from '../../components/SearchEntry'
-import BaseMenu from '../../components/BaseMenu'
+import HomeMenu from '../../components/HomeMenu'
 import ShareIndex from '../../components/ShareIndex'
+import HomeNewsTitle from '../../components/HomeNewsTitle'
+import HomeNewsList from '../../components/HomeNewsList'
 import request, { getnews24List, marketIndex } from '../../api'
 import './index.scss'
 
@@ -14,7 +16,8 @@ type PageState = {
   shareIndexData: {
     data: string[],
     field: string[]
-  }
+  },
+  newsListData: {}
 }
 
 interface Index {
@@ -29,13 +32,25 @@ class Index extends Component {
     shareIndexData: {
       field: [],
       data: [],
-    }
+    },
+    newsListData: {}
   }
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
   }
   componentDidMount () {
     this.getShareIndexData()
+    this.getListData()
+  }
+  async getListData () {
+    const {data} = await request(getnews24List,
+      {
+        pageSize: 20,
+        timeStamp: 0,
+        direction: 0
+      }
+    )
+    this.setState({ newsListData : data })
   }
   async getShareIndexData () {
     const {data} = await request(marketIndex)
@@ -48,13 +63,15 @@ class Index extends Component {
   componentDidHide () { }
 
   render () {
-    const {shareIndexData} = this.state
+    const {shareIndexData, newsListData} = this.state
     return (
       <View className='container'>
         <SearchEntry></SearchEntry>
-        <BaseMenu menuData={[]}></BaseMenu>
+        <HomeMenu menuData={[]}></HomeMenu>
         <View className="divider"></View>
         <ShareIndex shareIndexData={shareIndexData} ></ShareIndex>
+        <HomeNewsTitle></HomeNewsTitle>
+        <HomeNewsList listData={newsListData} ></HomeNewsList>
       </View>
     )
   }

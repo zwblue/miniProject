@@ -89,14 +89,17 @@ class ShareIndex extends Component {
         {handleShareIndexData.map((item, index) => {
           return (
             <View className="share-item" onClick={this.jumpToPage.bind(this, item)} key={index}>
-              <View className={`share-number ${parseInt(item.increase) >= 0 ? 'red' : 'green'}`}></View>
+              <View className={`share-number ${parseInt(item.increase) >= 0 ? 'red' : 'green'}`}>{item.currentPrice}</View>
+              <View className='share-content'>
+                <View className='share-name'><Text>{item.goodsName.slice(0,2)}</Text></View>
+                <View className={`share-change ${parseInt(item.increase) >= 0 ? 'red' : 'green'}`}>
+                  {item.increase + '%'}
+                </View>
+              </View>
+              {index !== handleShareIndexData.length-1 && <View className="line"></View>}
             </View>
           )
         })}
-        <View className="share-item">
-          <View className="search-icon"><Text>{this.props.shareIndexData.data[0]}</Text></View>
-          <View className="search-text"><Text>请输入股票代码/简拼</Text></View>
-        </View>
       </View>
     )
   }

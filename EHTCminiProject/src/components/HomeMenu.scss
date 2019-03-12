@@ -1,13 +1,13 @@
+@import'../styles/variables.scss';
 .menu-box{
   width: 100%;
-  color: #e6eaf2;
-  background: #111c24;
+  background: $base_bg;
   display: flex;
   flex-wrap: wrap;
   .menu-item-box{
     width: 25%;
     text-align: center;
-    margin: 30px 0;
+    margin: 28px 0;
     .menu-item{
       width: 60px;
       height: 60px;
@@ -17,7 +17,7 @@
       margin: 0 auto;
       align-items: center;
       justify-content: center;
-      margin-bottom: 10px;
+      margin-bottom: $base_margin;
       .menu-icon{
         width: 60px;
         height: 60px;

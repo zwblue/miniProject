@@ -2,7 +2,7 @@ import { ComponentClass } from 'react'
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text, Image } from '@tarojs/components'
 
-import './BaseMenu.scss'
+import './HomeMenu.scss'
 
 
 type PageOwnProps = {
@@ -19,12 +19,12 @@ type PageState = {
   }[]
 }
 
-interface BaseMenu {
+interface HomeMenu {
   props: PageOwnProps;
   state: PageState;
 }
 
-class BaseMenu extends Component {
+class HomeMenu extends Component {
   static defaultProps = {
     menuData: []
   }
@@ -73,4 +73,4 @@ class BaseMenu extends Component {
   }
 }
 
-export default BaseMenu as ComponentClass<PageOwnProps, PageState>
+export default HomeMenu as ComponentClass<PageOwnProps, PageState>

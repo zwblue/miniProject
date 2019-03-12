@@ -7,11 +7,17 @@ $base_color     :#d0d0d0;
 $desc_color     :#8e99ac;
 $green_color    :#00b07c;
 $red_color      :#ff5353;
+$blue_color     :#6798d3;
 // 背景颜色
 $base_bg        :#111c24;
 $red_bg         :#a84532;
 $black_bg       :#000000;
 $green_bg       :#007955;
-// 边框颜色
+// 边框
 $border_color   :#172530;
- 
+$border_radius  :12px;
+// 分隔
+$divider_height :12px;
+// 间隔
+$base_margin    :12px;
+$base_padding   :12px;

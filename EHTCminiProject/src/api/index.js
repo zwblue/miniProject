@@ -1,3 +1,5 @@
+import Taro from '@tarojs/taro'
+
 export const BASE_URL = 'https://pch5.htsec.com/'
 // 指数
 export const marketIndex = BASE_URL + 'marketIndex'
@@ -90,7 +92,7 @@ export const basicAspectUrl = BASE_URL + 'api/FundamentalDiagnosisStocks'
 
 export default function request (url, data = {}, method = 'POST') {
   return new Promise(function (resolve, reject) {
-    wx.request({
+    Taro.request({
       url: url,
       data: data,
       method: method,

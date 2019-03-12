@@ -1,0 +1,36 @@
+@import'../styles/variables.scss';
+.news-box{
+  height: 76px;
+  background: $base_bg;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $base_padding;  
+  color: $blue_color;
+  font-size: $large_size;
+  .lf-area{
+    display: flex;
+    align-items: center;
+    .news-icon{
+      margin-top: 2px;
+      background:url('../../images/home/news_24.png');
+      background-size: 100% 100%;
+      width: 45px;
+      height: 37px;
+      margin-right: $base_margin;
+    }
+  }
+  .rt-area{
+    .more-icon{
+      display:inline-block;
+      width:13px;
+      height:13px;
+      border-top:4px solid $blue_color;
+      border-right:4px solid $blue_color;
+      transform:rotate(45deg);
+      margin-left:6px;
+      vertical-align:2px;
+      margin-right:6px;
+    }
+  }
+}

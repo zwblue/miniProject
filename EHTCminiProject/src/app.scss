@@ -5,11 +5,39 @@ page{
   font-size: $base_size;
   color: $base_color;
   background: $black_bg;
+  line-height: 1.4;
+  font-family: Lucida Grande,'Microsoft YaHei',"Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+  view{
+    overflow: visible;
+  }
 }
+
 // h5
 body{
+  font-family: Lucida Grande,'Microsoft YaHei',"Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
   font-size: $base_size;
   background: $black_bg;
+  line-height: 1.4;
   height: 100%;
   color: $base_color;
+}
+
+.divider{
+  height: $divider_height;
+  display: block;
+  width: 100%;
+}
+// 组件中不能用这样式，小程序下组件是类似iframe嵌套的
+.red{
+  color: $red_color;
+}
+
+.green{
+  color: $green_color;
+}
+.top-bd{
+  border-top: 2px solid $border_color;
+}
+.bot-bd{
+  border-bottom: 2px solid $border_color;
 }

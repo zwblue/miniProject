@@ -1,0 +1,45 @@
+@import'../styles/variables.scss';
+.red{
+  color: $red_color;
+}
+.green{
+  color: $green_color;
+}
+.share-box{
+  width: 100%;
+  background: $base_bg;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.share-item{
+  width: 33.33333%;
+  box-sizing: border-box;
+  display: flex; 
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .share-number{
+    font-size: 40px;
+    font-weight: bold;
+  }
+  .share-content{
+    display: flex; 
+    align-items: center;
+    .share-name{
+      margin-right: $base_margin;
+    }
+    .share-change{
+      font-size: 28px;
+      font-weight: bold;
+    }
+  }
+  .line{
+    position: absolute;  
+    height: 60%;
+    border-right: 2px solid #203846;
+    right: 0;
+  }
+}
+

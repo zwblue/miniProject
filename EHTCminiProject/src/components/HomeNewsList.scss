@@ -1,0 +1,29 @@
+@import'../styles/variables.scss';
+.list-box{
+  padding:20px 16px;
+  padding-left: 24px;
+  // line-height:1.;
+  background:$base_bg;
+  font-size: $large_size;
+  .item-box{
+    position: relative;
+    border-left: 2px solid $blue_color;
+    margin-left: 4px;
+    padding:20px 0;
+    padding-left: 26px;
+    .left-point{
+      position: absolute;
+      left: -22px;
+      top: 24px;
+      border-radius:50%;
+      border:8px solid $base_bg;
+      .inner-point{
+        width:14px;
+        height:14px;
+        border-radius:50%;
+        background:$blue_color;
+        border:6px solid #2f4864;
+      }
+    }
+  }
+}
