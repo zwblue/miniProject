@@ -1,16 +1,15 @@
-.container{
-}
+@import'./styles/variables.scss';
 // 小程序
 page{
   height: 100%;
-  font-size: 26px;
-  color: #d0d0d0;
-  background: #000;
+  font-size: $base_size;
+  color: $base_color;
+  background: $black_bg;
 }
 // h5
 body{
-  font-size: 26px;
-  background: #000;
+  font-size: $base_size;
+  background: $black_bg;
   height: 100%;
-  color: #d0d0d0;
+  color: $base_color;
 }
