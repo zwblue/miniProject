@@ -4,7 +4,7 @@ import { View, Text } from '@tarojs/components'
 import BaseWxParse from '../components/BaseWxParse'
 import { parseData, parseTime } from '../utils'
 
-import './HomeMenu.scss'
+import './HomeNewsList.scss'
 
 
 type PageOwnProps = {
@@ -52,13 +52,19 @@ class HomeNewsList extends Component {
     return (
       <View className="list-box">
         {handledListData.map((item, index) => {
+          const html = this.getContent(item)
           return (
             <View className='item-box' key={index}>
               <View className='left-point'>
                 <View className='inner-point'></View>
               </View>
               <View>
-                <BaseWxParse html={this.getContent(item)}></BaseWxParse>
+                {process.env.TARO_ENV === 'weapp' ? (
+                  <BaseWxParse html={html}></BaseWxParse>
+                  ): null}
+              </View>
+              <View>
+                {process.env.TARO_ENV === 'h5' ? <View dangerouslySetInnerHTML = {{ __html: html }}></View> : null}
               </View>
               <View className='time'>
                 <Text>{parseTime(item.displaytime, '{y}/{m}/{d} {h}:{i}')}</Text>

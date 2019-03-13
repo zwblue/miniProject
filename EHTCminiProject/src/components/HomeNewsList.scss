@@ -1,4 +1,20 @@
 @import'../styles/variables.scss';
+// weapp / swan / alipay / h5 / rn / tt
+/*postcss-pxtransform h5 eject enable*/
+img{
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  display:inline-block;
+  max-width:100%;
+  overflow:hidden;
+  margin: 5px 0;
+}
+/*postcss-pxtransform h5 eject disable*/
+// 解决溢出隐藏圆点的问题
+view{
+  overflow: visible;
+}
 .list-box{
   padding:20px 16px;
   padding-left: 24px;
@@ -24,6 +40,9 @@
         background:$blue_color;
         border:6px solid #2f4864;
       }
+    }
+    .time{
+      color:$desc_color;
     }
   }
 }

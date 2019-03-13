@@ -18,6 +18,10 @@ interface HomeNewsTitle {
 }
 
 class HomeNewsTitle extends Component {
+  // 使用全局样式
+  static options = {
+    addGlobalClass: true
+  }
   state = {
     title: '小时新闻直播'
   }

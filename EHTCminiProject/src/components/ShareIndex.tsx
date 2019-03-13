@@ -24,6 +24,9 @@ interface ShareIndex {
 }
 
 class ShareIndex extends Component {
+  static options = {
+    addGlobalClass: true
+  }
   static defaultProps = {
     shareIndexData: {
       data: [1],
