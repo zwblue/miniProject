@@ -2,8 +2,6 @@
 // weapp / swan / alipay / h5 / rn / tt
 /*postcss-pxtransform h5 eject enable*/
 img{
-  width: auto;
-  height: auto;
   overflow: hidden;
   display:inline-block;
   max-width:100%;
@@ -16,16 +14,15 @@ view{
   overflow: visible;
 }
 .list-box{
-  padding:20px 16px;
+  padding:20px 16px 10px 16px;
   padding-left: 24px;
-  // line-height:1.;
   background:$base_bg;
   font-size: $large_size;
   .item-box{
     position: relative;
     border-left: 2px solid $blue_color;
     margin-left: 4px;
-    padding:20px 0;
+    padding-top:20px;
     padding-left: 26px;
     .left-point{
       position: absolute;
@@ -42,6 +39,7 @@ view{
       }
     }
     .time{
+      margin-top:5px;
       color:$desc_color;
     }
   }

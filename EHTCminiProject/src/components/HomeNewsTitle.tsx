@@ -3,8 +3,6 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Text} from '@tarojs/components'
 
 import './HomeNewsTitle.scss'
-
-
 type PageOwnProps = {
 }
 
@@ -26,9 +24,15 @@ class HomeNewsTitle extends Component {
     title: '小时新闻直播'
   }
   jumpToNewList = () :void => {
-    Taro.navigateTo({
-      url: '../newsList/newsList'
-    })
+    if (process.env.TARO_ENV === 'weapp') {
+      Taro.navigateTo({
+        url: '../newsList/newsList'
+      })
+    } else {
+      Taro.navigateTo({
+        url: '../newsListH5/newsList'
+      })
+    }
   }
   render () {
     const {title} = this.state

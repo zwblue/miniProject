@@ -32,13 +32,16 @@ class HomeNewsList extends Component {
   }
   componentWillReceiveProps (nextProps) {
     if (this.props.listData !== nextProps.listData) {
-      console.log(this.props.listData, nextProps)
       if (nextProps.listData.Data.length) {
         // 需要的值对应的key数组
         // const needKey = this.state.dataFormat
         const handledListData = parseData(nextProps.listData)
         this.setState({
           handledListData
+        })
+      } else {
+        this.setState({
+          handledListData: []
         })
       }
     }

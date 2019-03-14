@@ -3,6 +3,7 @@ import Taro, { Component, Config } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import HomeNewsList from '../../components/HomeNewsList'
 import BaseListState from '../../components/BaseListState'
+import BScroll from 'better-scroll'
 import request, { getnews24List } from '../../api'
 import {setLastTimeStamp} from '../../utils/index'
 import './newsList.scss'
@@ -38,7 +39,7 @@ interface Index {
 
 class Index extends Component {
     config: Config = {
-    navigationBarTitleText: '首页',
+    navigationBarTitleText: '新闻列表',
     enablePullDownRefresh: true
   }
   scroll = {}
@@ -63,10 +64,58 @@ class Index extends Component {
     // 加载失败，点击重新加载
   }
   componentWillUnmount () { }
+  componentDidHide () { }
   componentDidShow () {
     this.getListData(()=>{})
+    this._initScroll()
   }
-  componentDidHide () { }
+
+  // h5
+  _initScroll () {
+    this.scroll = new BScroll('#wrapper',{
+      probeType: 3,
+      click: true,
+      scrollX: false,
+      scrollY: true,
+      // eventPassthrough: 'horizontal',
+      pullDownRefresh: {
+        threshold: 60,
+        stop: 50
+      },
+      pullUpLoad: {
+        threshold: -20
+      }
+    })
+    if(this.scroll) {
+      // 下拉刷新
+      this.scroll.on('pullingDown', () => {
+        this.setState({
+          newsListData:{
+            Data: []
+          } 
+        })
+        this.getListData(() => { 
+          this._pullingDownUpComplete()
+        })
+      })
+      // 上拉加载
+      this.scroll.on('pullingUp', () => {
+        this.loadMoreListData(() => { 
+          this._pullingDownUpComplete() 
+        })
+      })
+      this.scroll.on('scroll', (pos) => {
+        // console.log('scroll', pos)
+      })
+    }
+  }
+  // h5接口请求完刷新
+  _pullingDownUpComplete () {
+    console.log('接口请求完毕,正在重新布置scroll')
+    this.scroll.finishPullDown()
+    this.scroll.finishPullUp()
+    this.scroll.refresh() // 重新计算元素高度
+  }
   async getListData (callback) {
     // this.loadingIsShow = true
     try {
@@ -104,7 +153,7 @@ class Index extends Component {
     }
   }
   updateListState (data) {
-    if (data.length < 10 ) {
+    if (data && data.length < 10 ) {
       this.setState({
         listState: {...initState, noData: true},
       })
@@ -159,25 +208,15 @@ class Index extends Component {
     }
     // this.loadingIsShow = false
   }
-  onPullDownRefresh () {
-    console.log('刷新')
-    this.setState({
-      newsListData:{
-        Data: []
-      } 
-    })
-    this.getListData(() => { Taro.stopPullDownRefresh() })
-  }
-  onReachBottom () {
-    console.log('到底了')
-    this.loadMoreListData()
-  }
   render () {
     const {listState, stateText} = this.state
     return (
-      <View className='index'>
-        <HomeNewsList listData={this.state.newsListData}></HomeNewsList>
-        <BaseListState stateText={stateText} listState={listState}></BaseListState>
+      <View className='index' id='wrapper'>
+        <View>
+          <View className='load-more'>下拉刷新</View>
+          <HomeNewsList listData={this.state.newsListData}></HomeNewsList>
+          <BaseListState stateText={stateText} listState={listState}></BaseListState>
+        </View>
       </View>
     )
   }

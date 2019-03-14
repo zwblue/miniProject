@@ -3,6 +3,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import '../utils/wxParse/wxParse.wxss'
 import WxParse from '../utils/wxParse/wxParse'
+import './BaseWxParse.scss'
 
 type PageOwnProps = {
   html: string

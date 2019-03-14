@@ -58,3 +58,8 @@ export function parseData (listData, dataKey = 'Data', fieldKey = 'Field', needK
   })
   return newListData
 }
+
+export function setLastTimeStamp (data, field, timeStr= 'displaytime') {
+  const index = field.findIndex(item => item === timeStr)
+  return data[data.length - 1][index]
+}

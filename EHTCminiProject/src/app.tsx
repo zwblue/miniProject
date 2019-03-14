@@ -30,6 +30,8 @@ class App extends Component {
       "pages/index/index",
     
       "pages/newsList/newsList",
+      "pages/newsListH5/newsList",
+      
       "pages/search/search",
   
       "pages/optional/optional",

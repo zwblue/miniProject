@@ -1,0 +1,20 @@
+@import'../styles/variables.scss';
+.box{
+  padding: 30px 0;
+  width: 100%;
+  text-align: center;
+  background: $base_bg;
+}
+.loading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .loading-icon{
+    width:50px;
+    height:50px;
+    margin-right: $small_margin;
+  }
+}
+.no-data{
+  color: $desc_color;
+}
