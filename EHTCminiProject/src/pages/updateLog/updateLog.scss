@@ -1,0 +1,25 @@
+.log-box{
+  color:#d0d0d0;
+  font-size:30rpx;
+  .newest{
+    background: #152630;
+    color:#4c81b9;
+    padding: 10px 15px;
+    padding-bottom: 0;
+  }
+  .title{
+    display: flex;
+    padding: 10px 15px;
+    justify-content: space-between;
+    background: #152630;
+  }
+  .content{
+    background: #111c24;
+    padding: 10px 15px;
+    .desc{
+      color:#999;
+      margin-bottom: 5px;
+    }
+  }
+}
+

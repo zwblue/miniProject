@@ -1,0 +1,33 @@
+.user-box{
+  text-align: center;
+  padding-top: 20%;
+  color: #8c99ae;
+  font-size: 34rpx;
+  font-weight: bold;
+  .logo-box{
+    position: relative;
+    .ht-image{
+      width: 351rpx;
+      height: 462rpx;
+    }
+    .logo{
+      position: absolute;
+      left: 50%;
+      top:-9rpx;
+      z-index: 5;
+      width: 348rpx;
+      height: 348rpx;
+      background: url('../../images/user/ht_logo.png');
+      background-size: 100% 100%;
+      position:absolute;
+      margin-left:-162rpx;
+    }
+  }
+  .desc{
+    margin-top: 25px;
+    line-height: 60rpx;
+  }
+}
+
+
+
