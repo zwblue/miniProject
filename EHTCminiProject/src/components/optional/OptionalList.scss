@@ -2,26 +2,25 @@
 .title-box{
   display: flex;
   color: #8c99ae;
-  padding:  14px 15px;
+  padding: 14px 15px 14px 20px;
   font-size: $large_size;
   justify-content: space-between;
 }
 
 .item-box{
   display: flex;
-  padding: 7px 15px;
+  padding: 12px 15px 12px 20px;
   font-size: $larger_size;
   justify-content: space-between;
   align-items: center;
   .item-increase {
-    color: $base_color;
     padding-top: 4px;
     padding-bottom: 4px;
     border-radius: $border_radius;
   }
   .code{
     color: $desc_color;
-    font-size: $base_color;
+    font-size: $base_size;
   }
 }
 
@@ -43,13 +42,14 @@
 }
 
 .add-optiona{
+  color:$base_color;
   display: flex;
   justify-content: center;
   padding: 24px 0;
   .add-icon{
     width: 136px;
     height: 24px;
-    background: url('../../../static/images/optional/option_add.png') no-repeat;
+    background: url('../../images/optional/option_add.png') no-repeat;
     background-size: 100% 100%;
   }
 }

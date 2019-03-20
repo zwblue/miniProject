@@ -57,12 +57,13 @@ class OptionalList extends Component {
     // 若当前价格为0 则显示lastPrice
     console.log(3333, optionalList)
     const newOptionalList = optionalList.map((item) => {
+      console.log(3333389, parseInt(item.currentPrice))
       if (parseInt(item.currentPrice) === 0) {
         return {
           ...item, currentPrice: item.lastPrice, rise: '0.0', increase: '0.00', isGray: true
         }
       } else {
-        return item
+        return { ...item,  isGray: false }
       }
     })
     // 根据sortIndex有排序来对数据进行排序
@@ -122,7 +123,7 @@ class OptionalList extends Component {
   }
   jumpToPage = () => {
     Taro.navigateTo({
-      url: '../search/main'
+      url: '../search/search'
     })
   }
   render () {
@@ -150,9 +151,9 @@ class OptionalList extends Component {
                     {item.goodsCode}
                   </View>
                 </View>
-                <View className={`area1 item-price ${item.rise >= 0 ? 'red' : 'greem' } ${ item.isGray ? 'gray': ''}`}>{item.currentPrice}</View>
-                <View className={`area2 item-rise ${item.rise >= 0 ? 'red' : 'greem' } ${ item.isGray ? 'gray': ''}`}>{item.rise}</View>
-                <View className={`area3 item-increase ${item.rise >= 0 ? 'red' : 'greem' } ${ item.isGray ? 'gray': ''}`} >{item.increase + '%'}</View>
+                <View className={`area1 item-price ${item.rise > 0 ? 'red' : 'green' } ${ item.isGray ? 'gray': ''}`}>{item.currentPrice}</View>
+                <View className={`area2 item-rise ${item.rise > 0 ? 'red' : 'green' } ${ item.isGray ? 'gray': ''}`}>{item.rise}</View>
+                <View className={`area3 item-increase ${item.rise > 0 ? 'red' : 'green' } ${ item.isGray ? 'gray': ''}`} >{item.increase + '%'}</View>
               </View>
             )
           })}
