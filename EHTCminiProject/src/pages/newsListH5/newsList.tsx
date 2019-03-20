@@ -1,7 +1,7 @@
 import { ComponentClass } from 'react'
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View } from '@tarojs/components'
-import HomeNewsList from '../../components/HomeNewsList'
+import HomeNewsList from '../../components/home/HomeNewsList'
 import BaseListState from '../../components/BaseListState'
 import BScroll from 'better-scroll'
 import request, { getnews24List } from '../../api'

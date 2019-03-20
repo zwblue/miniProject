@@ -1,0 +1,25 @@
+@import'../../styles/variables.scss';
+page{
+  background: $base_bg;
+}
+.title-box{
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 24px; 
+  color: $blue_color;
+  background: #152630;
+  font-size: $large_size;
+  border-color: $border_color;
+  .edit-box{
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    .edit-icon{
+      margin-left: 10px;
+      background: url('../../images/optional/editor.png');
+      background-size: 100% 100%;
+      width: 32px;
+      height: 30px;
+    }
+  }
+}

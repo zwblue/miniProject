@@ -1,0 +1,55 @@
+@import'../../styles/variables.scss';
+.title-box{
+  display: flex;
+  color: #8c99ae;
+  padding:  14px 15px;
+  font-size: $large_size;
+  justify-content: space-between;
+}
+
+.item-box{
+  display: flex;
+  padding: 7px 15px;
+  font-size: $larger_size;
+  justify-content: space-between;
+  align-items: center;
+  .item-increase {
+    color: $base_color;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: $border_radius;
+  }
+  .code{
+    color: $desc_color;
+    font-size: $base_color;
+  }
+}
+
+.area0 {
+  text-align: left;
+  width: 31%;
+}
+.area1 {
+  text-align: center;
+  width: 23%;
+}
+.area2 {
+  text-align: center;
+  width: 23%;
+}
+.area3 {
+  text-align: center;
+  width: 23%;
+}
+
+.add-optiona{
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  .add-icon{
+    width: 136px;
+    height: 24px;
+    background: url('../../../static/images/optional/option_add.png') no-repeat;
+    background-size: 100% 100%;
+  }
+}
