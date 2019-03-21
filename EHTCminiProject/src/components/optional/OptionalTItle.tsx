@@ -2,7 +2,7 @@ import { ComponentClass } from 'react'
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 
-import './market.scss'
+import './OptionalTitle.scss'
 
 
 type PageOwnProps = {}
@@ -14,8 +14,7 @@ interface OptionalTitle {
 }
 
 class OptionalTitle extends Component {
-  
-    config: Config = {
+  config: Config = {
     navigationBarTitleText: '首页'
   }
 

@@ -52,8 +52,9 @@ class Index extends Component {
     const savedCodeArray = Taro.getStorageSync('savedCodeArray')
     this.setState({
       savedCodeArray
+    }, ()=>{
+      this.getOptionData(savedCodeArray)
     })
-    this.getOptionData(savedCodeArray)
   }
 
   componentDidHide () { }

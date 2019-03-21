@@ -1,0 +1,102 @@
+
+@import'../../styles/variables.scss';
+page{
+  background: $base_bg;
+}
+.edit-box{
+  position: fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  right: 0;
+  font-size: $large_size;
+  color: $desc_color;
+  background: $base_bg;
+  .isHide{
+    display: none !important;
+  }
+  .hide{
+    opacity: 0;
+  }
+  .title{
+    display: flex;
+    justify-content: space-between;
+    padding: $base_padding 0 ;
+    padding-left: 40px;
+    border-color:$border_color;
+    .title-item{
+      text-align: center;
+    }
+    .title3{
+      width: 23%;
+    }
+    .title1{
+      width: 31%;
+    }
+  }
+  
+  .list-box{
+    position: relative;
+    .start-item{
+      opacity: 0.3;
+    }
+    .list-item{
+      border-color:$border_color;
+      padding-left: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      height: 54Px;
+      &.active-item{
+        position: absolute;
+        top:0;
+        right:0;
+        left:0;
+        height: 54Px;
+        color:$white_bg; 
+        opacity: 1;
+        background: $black_bg;
+      }
+    }
+    .remove{
+      width: 44px;
+      height: 44px;
+      margin: 0 7px;
+      background: url('../../images/optional/remove_zxg.png');
+      background-size: 100% 100%;
+    }
+    .desc{
+      width: 31%;
+      text-align: center;
+    }
+    .toTop{
+      width: 44px;
+      height: 44px;
+      margin: 0 7px;
+      background: url('../../images/optional/option_top.png');
+      background-size: 100% 100%;
+    }
+    .move-box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 108px;
+      width: 23%;
+    }
+    .move{
+      width: 44px;
+      height: 44px;
+      margin: 0 7px;
+      background: url('../../images/optional/move_icon.png');
+      background-size: 100% 100%;
+    }
+    .stock-name{
+      color: $base_color;
+    }
+  }
+}
+
+
+
+
