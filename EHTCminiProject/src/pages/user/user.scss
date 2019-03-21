@@ -2,30 +2,30 @@
   text-align: center;
   padding-top: 20%;
   color: #8c99ae;
-  font-size: 34rpx;
+  font-size: 34px;
   font-weight: bold;
   .logo-box{
     position: relative;
     .ht-image{
-      width: 351rpx;
-      height: 462rpx;
+      width: 351px;
+      height: 462px;
     }
     .logo{
       position: absolute;
       left: 50%;
-      top:-9rpx;
+      top:-10px;
       z-index: 5;
-      width: 348rpx;
-      height: 348rpx;
+      width: 348px;
+      height: 348px;
       background: url('../../images/user/ht_logo.png');
       background-size: 100% 100%;
       position:absolute;
-      margin-left:-162rpx;
+      margin-left:-162px;
     }
   }
   .desc{
     margin-top: 25px;
-    line-height: 60rpx;
+    line-height: 60px;
   }
 }
 

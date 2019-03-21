@@ -131,7 +131,7 @@ class Index extends Component {
       } 
     })
   }
-  touchend (e) {
+  touchend = (e) => {
     const {startIndex, endIndex} = this.state.activeItemConfig
     const {savedCodeArray, activeItem, handledStockCodes} = this.state
     // 1、拖动完毕，开启滑动
@@ -159,7 +159,7 @@ class Index extends Component {
       } 
     })
   }
-  touchstart (e) {
+  touchstart = (e) => {
     // 1、选中item距离屏幕的y值，
     // 2、选中item距离外元素的y值
     // 3、选中的item是第几个

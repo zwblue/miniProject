@@ -34,7 +34,7 @@ class OptionalTitle extends Component {
   }
   render () {
     return (
-      <View className="title-box top-bd bot-bd">
+      <View className="optional-title top-bd bot-bd">
         <View>我的自选股</View>
         <View className="edit-box" onClick={this.jumpToEditOptionalPage}>
           <View>编辑</View>

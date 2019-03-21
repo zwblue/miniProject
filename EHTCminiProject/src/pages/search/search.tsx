@@ -90,7 +90,7 @@ class Index extends Component {
   render () {
     const {searchCodeArray, savedCodeArray, inputVaule } = this.state
     return (
-      <View className='index'>
+      <View className='search-page'>
         <View className="search-box">
           <View className="search-button">
             <View className="search-icon"></View>

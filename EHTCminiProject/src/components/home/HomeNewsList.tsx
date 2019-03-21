@@ -65,12 +65,10 @@ class HomeNewsList extends Component {
                 {process.env.TARO_ENV === 'weapp' ? (
                   <BaseWxParse html={html}></BaseWxParse>
                   ): null}
-              </View>
-              <View>
                 {process.env.TARO_ENV === 'h5' ? <View dangerouslySetInnerHTML = {{ __html: html }}></View> : null}
-              </View>
-              <View className='time'>
+                <View className='time'>
                 <Text>{parseTime(item.displaytime, '{y}/{m}/{d} {h}:{i}')}</Text>
+                </View> 
               </View>
             </View>
           )

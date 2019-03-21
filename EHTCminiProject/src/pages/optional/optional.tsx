@@ -29,8 +29,7 @@ interface Index {
 }
 
 class Index extends Component {
-  
-    config: Config = {
+  config: Config = {
     navigationBarTitleText: '首页'
   }
   state = {

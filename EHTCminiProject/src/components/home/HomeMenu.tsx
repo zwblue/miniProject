@@ -30,14 +30,14 @@ class HomeMenu extends Component {
   }
   state = {
     defaultMenuData :[
-      {name: '我的自选', type: 'tab', path: '../optional/optional', bg: '5f93ed', icon: require('../images/menu/ht_12.png')},
-      {name: '自选资讯', type: 'tab', path: '../optional/optional', bg: 'e16969', icon: require('../images/menu/ht_03.png')},
-      {name: '板块', type: 'tab', path: '../optional/optional', bg: 'e38900', icon: require('../images/menu/block.png')},
-      {name: '港股', type: 'tab', path: '../optional/optional', bg: 'c74a23', icon: require('../images/menu/hk.png')},
-      {name: '热搜股票', type: 'tab', path: '../optional/optional', bg: 'e4ad2e', icon: require('../images/menu/ht_19.png')},
-      {name: '龙虎榜', type: 'tab', path: '../optional/optional', bg: 'd45b26', icon: require('../images/menu/ht_21.png')},
-      {name: '条件选股', type: 'tab', path: '../optional/optional', bg: '49b0b0', icon: require('../images/menu/ht_09.png')},
-      {name: '新股日历', type: 'tab', path: '../optional/optional', bg: '824ca6', icon: require('../images/menu/ht_18.png')}
+      {name: '我的自选', type: 'tab', path: '../optional/optional', bg: '5f93ed', icon: require('../../images/menu/ht_12.png')},
+      {name: '自选资讯', type: 'tab', path: '../optional/optional', bg: 'e16969', icon: require('../../images/menu/ht_03.png')},
+      {name: '板块', type: 'tab', path: '../optional/optional', bg: 'e38900', icon: require('../../images/menu/block.png')},
+      {name: '港股', type: 'tab', path: '../optional/optional', bg: 'c74a23', icon: require('../../images/menu/hk.png')},
+      {name: '热搜股票', type: 'tab', path: '../optional/optional', bg: 'e4ad2e', icon: require('../../images/menu/ht_19.png')},
+      {name: '龙虎榜', type: 'tab', path: '../optional/optional', bg: 'd45b26', icon: require('../../images/menu/ht_21.png')},
+      {name: '条件选股', type: 'tab', path: '../optional/optional', bg: '49b0b0', icon: require('../../images/menu/ht_09.png')},
+      {name: '新股日历', type: 'tab', path: '../optional/optional', bg: '824ca6', icon: require('../../images/menu/ht_18.png')}
     ]
   }
   jumpToPage (url: string) :void {
